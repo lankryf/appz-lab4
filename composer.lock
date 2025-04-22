@@ -1,0 +1,469 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "39d79edcdae43e7d3a0733b6b4d71f60",
+    "packages": [
+        {
+            "name": "bubblegum-php/bubblegum-candyman",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bubblegum-php/bubblegum-candyman.git",
+                "reference": "62f939e165d64322a4428bcfe824838286cfd4a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bubblegum-php/bubblegum-candyman/zipball/62f939e165d64322a4428bcfe824838286cfd4a2",
+                "reference": "62f939e165d64322a4428bcfe824838286cfd4a2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/commands.php"
+                ],
+                "psr-4": {
+                    "Bubblegum\\": "src/",
+                    "Bubblegum\\Commands\\BubblegumCandyman\\": "src/Commands/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LankryF",
+                    "email": "lankrf@gmail.com"
+                }
+            ],
+            "description": "Commands manager module for BUBBLEGUM.",
+            "homepage": "https://github.com/bubblegum-php/bubblegum-candyman",
+            "keywords": [
+                "bubblegum",
+                "bubblegum-candyman",
+                "candyman",
+                "commands"
+            ],
+            "support": {
+                "issues": "https://github.com/bubblegum-php/bubblegum-candyman/issues",
+                "source": "https://github.com/bubblegum-php/bubblegum-candyman"
+            },
+            "time": "2024-09-26T11:41:18+00:00"
+        },
+        {
+            "name": "bubblegum-php/bubblegum-controllers",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bubblegum-php/bubblegum-controllers.git",
+                "reference": "00737377d5c0d3bb27a136157f5447d1f1b42bb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bubblegum-php/bubblegum-controllers/zipball/00737377d5c0d3bb27a136157f5447d1f1b42bb4",
+                "reference": "00737377d5c0d3bb27a136157f5447d1f1b42bb4",
+                "shasum": ""
+            },
+            "require": {
+                "bubblegum-php/bubblegum-core": "1.0.*",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bubblegum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LankryF",
+                    "email": "lankrf@gmail.com"
+                }
+            ],
+            "description": "Controllers module for BUBBLEGUM.",
+            "homepage": "https://github.com/bubblegum-php/bubblegum-controllers",
+            "keywords": [
+                "bubblegum",
+                "bubblegum-controllers",
+                "controllers"
+            ],
+            "support": {
+                "issues": "https://github.com/bubblegum-php/bubblegum-controllers/issues",
+                "source": "https://github.com/bubblegum-php/bubblegum-controllers"
+            },
+            "time": "2024-09-26T10:38:17+00:00"
+        },
+        {
+            "name": "bubblegum-php/bubblegum-core",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bubblegum-php/bubblegum-core.git",
+                "reference": "b4989bf9c2ccc6a973f98fd2e7b575cd758b5625"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bubblegum-php/bubblegum-core/zipball/b4989bf9c2ccc6a973f98fd2e7b575cd758b5625",
+                "reference": "b4989bf9c2ccc6a973f98fd2e7b575cd758b5625",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Bubblegum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LankryF",
+                    "email": "lankrf@gmail.com"
+                }
+            ],
+            "description": "Bubblegum core including app and routes.",
+            "homepage": "https://github.com/bubblegum-php/bubblegum-core",
+            "keywords": [
+                "bubblegum",
+                "bubblegum-core",
+                "core"
+            ],
+            "support": {
+                "issues": "https://github.com/bubblegum-php/bubblegum-core/issues",
+                "source": "https://github.com/bubblegum-php/bubblegum-core"
+            },
+            "time": "2024-09-26T14:42:05+00:00"
+        },
+        {
+            "name": "bubblegum-php/bubblegum-db",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bubblegum-php/bubblegum-db.git",
+                "reference": "a43f7c443002c32bd01906d58bcee0ec8a94c9ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bubblegum-php/bubblegum-db/zipball/a43f7c443002c32bd01906d58bcee0ec8a94c9ea",
+                "reference": "a43f7c443002c32bd01906d58bcee0ec8a94c9ea",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "bubblegum-php/bubblegum-core": "@dev",
+                "bubblegum-php/bubblegum-environment": "@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bubblegum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LankryF",
+                    "email": "lankrf@gmail.com"
+                }
+            ],
+            "description": "Database core for BUBBLEGUM.",
+            "homepage": "https://github.com/bubblegum-php/bubblegum-db",
+            "keywords": [
+                "bubblegum",
+                "bubblegum-database",
+                "bubblegum-db"
+            ],
+            "support": {
+                "issues": "https://github.com/bubblegum-php/bubblegum-db/issues",
+                "source": "https://github.com/bubblegum-php/bubblegum-db"
+            },
+            "time": "2024-09-26T09:42:38+00:00"
+        },
+        {
+            "name": "bubblegum-php/bubblegum-db-migrations",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bubblegum-php/bubblegum-db-migrations.git",
+                "reference": "45894f0b3dfd7e07f2ff33c3dcd6d0dc0283a2b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bubblegum-php/bubblegum-db-migrations/zipball/45894f0b3dfd7e07f2ff33c3dcd6d0dc0283a2b2",
+                "reference": "45894f0b3dfd7e07f2ff33c3dcd6d0dc0283a2b2",
+                "shasum": ""
+            },
+            "require": {
+                "bubblegum-php/bubblegum-candyman": "1.0.*",
+                "bubblegum-php/bubblegum-db": "1.0.*",
+                "bubblegum-php/bubblegum-environment": "1.0.*",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/commands.php"
+                ],
+                "psr-4": {
+                    "Bubblegum\\": "src/",
+                    "Bubblegum\\Commands\\BubblegumDbMigrations\\": "src/Commands/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LankryF",
+                    "email": "lankrf@gmail.com"
+                }
+            ],
+            "description": "Database migrations module for BUBBLEGUM.",
+            "homepage": "https://github.com/bubblegum-php/bubblegum-db-migrations",
+            "keywords": [
+                "bubblegum",
+                "bubblegum-database",
+                "bubblegum-db",
+                "bubblegum-db-migrations",
+                "migrations"
+            ],
+            "support": {
+                "issues": "https://github.com/bubblegum-php/bubblegum-db-migrations/issues",
+                "source": "https://github.com/bubblegum-php/bubblegum-db-migrations"
+            },
+            "time": "2024-09-26T10:39:01+00:00"
+        },
+        {
+            "name": "bubblegum-php/bubblegum-db-models",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bubblegum-php/bubblegum-db-models.git",
+                "reference": "92399678a1439b36ddbfdff58a75ae460d2c2618"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bubblegum-php/bubblegum-db-models/zipball/92399678a1439b36ddbfdff58a75ae460d2c2618",
+                "reference": "92399678a1439b36ddbfdff58a75ae460d2c2618",
+                "shasum": ""
+            },
+            "require": {
+                "bubblegum-php/bubblegum-db": "1.0.*",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bubblegum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LankryF",
+                    "email": "lankrf@gmail.com"
+                }
+            ],
+            "description": "Database models module for BUBBLEGUM.",
+            "homepage": "https://github.com/bubblegum-php/bubblegum-db-models",
+            "keywords": [
+                "bubblegum",
+                "bubblegum-database",
+                "bubblegum-db",
+                "bubblegum-db-models",
+                "models"
+            ],
+            "support": {
+                "issues": "https://github.com/bubblegum-php/bubblegum-db-models/issues",
+                "source": "https://github.com/bubblegum-php/bubblegum-db-models"
+            },
+            "time": "2024-09-26T10:37:57+00:00"
+        },
+        {
+            "name": "bubblegum-php/bubblegum-environment",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bubblegum-php/bubblegum-environment.git",
+                "reference": "37e2c94b5fbdc02f8cef1f737a1d5fa8851c93f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bubblegum-php/bubblegum-environment/zipball/37e2c94b5fbdc02f8cef1f737a1d5fa8851c93f1",
+                "reference": "37e2c94b5fbdc02f8cef1f737a1d5fa8851c93f1",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Bubblegum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LankryF",
+                    "email": "lankrf@gmail.com"
+                }
+            ],
+            "description": "Environment manager module for BUBBLEGUM.",
+            "homepage": "https://github.com/bubblegum-php/bubblegum-environment",
+            "keywords": [
+                "bubblegum",
+                "bubblegum-environment",
+                "environment"
+            ],
+            "support": {
+                "issues": "https://github.com/bubblegum-php/bubblegum-environment/issues",
+                "source": "https://github.com/bubblegum-php/bubblegum-environment"
+            },
+            "time": "2024-09-26T09:44:54+00:00"
+        },
+        {
+            "name": "bubblegum-php/bubblegum-middlewares",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bubblegum-php/bubblegum-middlewares.git",
+                "reference": "58177fd829e305366df68b4c65893d2e5945a0de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bubblegum-php/bubblegum-middlewares/zipball/58177fd829e305366df68b4c65893d2e5945a0de",
+                "reference": "58177fd829e305366df68b4c65893d2e5945a0de",
+                "shasum": ""
+            },
+            "require": {
+                "bubblegum-php/bubblegum-core": "1.0.*",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bubblegum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LankryF",
+                    "email": "lankrf@gmail.com"
+                }
+            ],
+            "description": "Middlewares module for bubblegum.",
+            "homepage": "https://github.com/bubblegum-php/bubblegum-middlewares",
+            "keywords": [
+                "bubblegum",
+                "bubblegum-middlewares",
+                "middlewares"
+            ],
+            "support": {
+                "issues": "https://github.com/bubblegum-php/bubblegum-middlewares/issues",
+                "source": "https://github.com/bubblegum-php/bubblegum-middlewares"
+            },
+            "time": "2024-09-27T09:22:13+00:00"
+        },
+        {
+            "name": "bubblegum-php/bubblegum-views",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bubblegum-php/bubblegum-views.git",
+                "reference": "fdc827d9a9ad9b81fc7deb9ecdf004cc59454d01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bubblegum-php/bubblegum-views/zipball/fdc827d9a9ad9b81fc7deb9ecdf004cc59454d01",
+                "reference": "fdc827d9a9ad9b81fc7deb9ecdf004cc59454d01",
+                "shasum": ""
+            },
+            "require": {
+                "bubblegum-php/bubblegum-core": "1.0.*",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Bubblegum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LankryF",
+                    "email": "lankrf@gmail.com"
+                }
+            ],
+            "description": "Views module for BUBBLEGUM.",
+            "homepage": "https://github.com/bubblegum-php/bubblegum-views",
+            "keywords": [
+                "bubblegum",
+                "bubblegum-views",
+                "views"
+            ],
+            "support": {
+                "issues": "https://github.com/bubblegum-php/bubblegum-views/issues",
+                "source": "https://github.com/bubblegum-php/bubblegum-views"
+            },
+            "time": "2024-09-26T10:34:38+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^8.0"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
