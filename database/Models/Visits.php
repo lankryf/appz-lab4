@@ -6,5 +6,5 @@ use Bubblegum\Database\Model;
 
 class Visits extends Model
 {
-    protected $tableName = 'quest_rooms';
+    protected $tableName = 'visits';
 }
