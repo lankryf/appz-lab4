@@ -14,9 +14,8 @@ return new class extends Migration
     {
         Table::create('visits', function (Blueprint $blueprint) {
             $blueprint->id();
-            $blueprint->varchar('name', 64);
-            $blueprint->time('open_time');
-            $blueprint->time('close_time');
+            $blueprint->int('quest_room_id');
+            $blueprint->int('user_id');
             $blueprint->createdAt();
             $blueprint->updatedAt();
         });
