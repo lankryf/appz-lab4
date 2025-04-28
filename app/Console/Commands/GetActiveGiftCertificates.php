@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Repository\GiftCertificatesRepository\GiftCertificatesRepository;
 use Bubblegum\Candyman\Command;
 use Bubblegum\Candyman\Console;
 use Bubblegum\Database\DB;
@@ -14,9 +15,14 @@ class GetActiveGiftCertificates extends Command
     public function handle($args): void
     {
         DB::initPDO();
-        $gifts = (new GiftCertificate)->where('used', '=', 'false')->get();
+        $gifts = (new GiftCertificatesRepository())->getActive();
+        $count = 0;
         foreach ($gifts as $gift) {
             Console::info("id={$gift->getId()} code={$gift->getCode()}");
+            $count++;
+        }
+        if (!$count) {
+            Console::info('No certificates found :(');
         }
     }
 

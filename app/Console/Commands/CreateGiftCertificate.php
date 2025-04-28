@@ -2,6 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Exceptions\ValidationException;
+use App\Repository\GiftCertificatesRepository\GiftCertificatesRepository;
+use App\Service\ValidatorService\ValidatorService;
 use Bubblegum\Candyman\Command;
 use Bubblegum\Candyman\Console;
 use Bubblegum\Database\DB;
@@ -16,11 +19,13 @@ class CreateGiftCertificate extends Command
     public function handle($args): void
     {
         DB::initPDO();
-        GiftCertificate::create([
-            'code' => $args[0],
-            'used' => 'false',
-        ]);
-        Console::info('created');
+        if (count($args) != count($this->argsNames))
+        {
+            Console::error('Invalid arguments count');
+            return;
+        }
+        (new GiftCertificatesRepository())->create($args[0]);
+        Console::done('Gift certificate has been created!');
     }
 
 }

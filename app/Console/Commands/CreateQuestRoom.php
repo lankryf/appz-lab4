@@ -2,6 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Exceptions\ValidationException;
+use App\Repository\GiftCertificatesRepository\GiftCertificatesRepository;
+use App\Repository\QuestRoomsRepository\QuestRoomsRepository;
+use App\Service\ValidatorService\ValidatorService;
 use Bubblegum\Candyman\Command;
 use Bubblegum\Candyman\Console;
 use Bubblegum\Database\DB;
@@ -16,14 +20,30 @@ class CreateQuestRoom extends Command
     public function handle($args): void
     {
         DB::initPDO();
-        QuestRoom::create([
-            'name' => $args[0],
-            'open_hour' => (int)$args[1],
-            'close_hour' => (int)$args[2],
-            'price' => (float)$args[3],
-            'max_players' => (int)$args[4],
-        ]);
-        Console::info('created');
+        $validatorService = new ValidatorService();
+        if (count($args) != count($this->argsNames))
+        {
+            Console::error('Invalid arguments count');
+            return;
+        }
+        try {
+            $openHour = $validatorService->toInt($this->argsNames[1], $args[1]);
+            $closeHour = $validatorService->toInt($this->argsNames[2], $args[2]);
+            $price = $validatorService->toFloat($this->argsNames[3], $args[3]);
+            $maxPlayers = $validatorService->toInt($this->argsNames[4], $args[4]);
+        } catch (ValidationException $exception) {
+            Console::error($exception->getMessage());
+            return;
+        }
+
+        (new QuestRoomsRepository())->create(
+            $args[0],
+            $openHour,
+            $closeHour,
+            $price,
+            $maxPlayers
+        );
+        Console::done('Quest room has been created!');
     }
 
 }
