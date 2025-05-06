@@ -7,7 +7,7 @@ use Database\Models\Visits;
 
 class VisitsRepository implements VisitsRepositoryInterface
 {
-    public function create(int $roomId, int $userId): Visits|Model
+    public function create(int $roomId, int $userId): Visits
     {
         return Visits::create([
             'quest_room_id' => $roomId,

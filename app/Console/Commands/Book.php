@@ -44,7 +44,7 @@ class Book extends Command
             }
 
 
-            $change = (new BookingService())->bookAndReturnChange(
+            $change = BookingService::get()->bookAndReturnChange(
                 $args[0],
                 $roomId,
                 $fromHour,

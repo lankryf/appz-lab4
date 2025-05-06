@@ -11,6 +11,24 @@ use App\Repository\VisitsRepository\VisitsRepository;
 
 class BookingService implements BookingServiceInterface
 {
+
+    public function __construct(
+        private UsersRepository $usersRepository,
+        private QuestRoomsRepository $questRoomsRepository,
+        private GiftCertificatesRepository $giftCertificatesRepository,
+        private VisitsRepository $visitsRepository
+    ) {}
+
+    public static function get()
+    {
+        return new static(
+            new UsersRepository(),
+            new QuestRoomsRepository(),
+            new GiftCertificatesRepository(),
+            new VisitsRepository()
+        );
+    }
+
     /**
      * @throws BookingException
      */
@@ -22,16 +40,11 @@ class BookingService implements BookingServiceInterface
         float $money,
         string|null $giftCertificateCode = null
     ): float {
-        $usersRepository = new UsersRepository();
-        $questRoomsRepository = new QuestRoomsRepository();
-        $giftCertificateRepository = new GiftCertificatesRepository();
-        $visitsRepository = new VisitsRepository();
-
-        $user = $usersRepository->getFirstByLogin($login);
+        $user = $this->usersRepository->getFirstByLogin($login);
         if ($user->getId() === null) {
             throw new BookingException('user not found');
         }
-        $room = $questRoomsRepository->getById($roomId);
+        $room = $this->questRoomsRepository->getById($roomId);
         if ($room->getId() === null) {
             throw new BookingException('room not found');
         }
@@ -40,7 +53,7 @@ class BookingService implements BookingServiceInterface
             throw new BookingException('booking time is not fit');
         }
 
-        $visits = $visitsRepository->fetchAllVisitsByRoom($roomId);
+        $visits = $this->visitsRepository->fetchAllVisitsByRoom($roomId);
         if ($visits && count($visits) > $room->getMaxPlayers()) {
             throw new BookingException('no free places');
         }
@@ -48,7 +61,7 @@ class BookingService implements BookingServiceInterface
         $giftCardUsed = false;
         $change = $money - $room->getPrice();
         if (!is_null($giftCertificateCode)) {
-            $gift = $giftCertificateRepository->getFirstByCode($giftCertificateCode);
+            $gift = $this->giftCertificatesRepository->getFirstByCode($giftCertificateCode);
             if ($gift->getId() === null) {
                 throw new BookingException('gift certificate not found');
             }
@@ -57,14 +70,14 @@ class BookingService implements BookingServiceInterface
             }
             $giftCardUsed = true;
             $gift->setUsed(true);
-            $giftCertificateRepository->save($gift);
+            $this->giftCertificatesRepository->save($gift);
             $change = $money;
         }
         if (!$giftCardUsed && $money < $room->getPrice()) {
             throw new BookingException('you have not enough money');
         }
 
-        $visitsRepository->create($room->getId(), $user->getId());
+        $this->visitsRepository->create($room->getId(), $user->getId());
 
         return $change;
     }

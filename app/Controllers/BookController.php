@@ -37,7 +37,7 @@ class BookController extends Controller
                 $gift = $data['giftCardCode'];
             }
 
-            $change = (new BookingService())->bookAndReturnChange(
+            $change = BookingService::get()->bookAndReturnChange(
                 (string)$data['login'],
                 $roomId,
                 $fromHour,
